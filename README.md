@@ -1,7 +1,6 @@
-# php7-xdebug-phpstorm-guide
-Short guide to setup php7's built in server + xdebug to work with PhpStorm on windows
+# PHP7 + Xdebug in PhpStorm Guide
 
-(WIP)
+Really short guide to setup php7's built in server + xdebug to work with PhpStorm on windows. No XAMPP, no extra stuff, only the things you really need.
 
 1. Install PhpStorm
 2. Install php7.x (https://windows.php.net/download#php-7.2) in c:\php (or whatever)
@@ -29,4 +28,16 @@ xdebug.idekey=PHPSTORM
 13. Add a breakpoint somewhere in your index.php and try to access localhost in your browser.
 14. Voila!
 
-Optional PHP Code Sniffer configuration
+## (Optional) PHP Code Sniffer configuration ##
+
+1. Install composer. You can download the exe in https://getcomposer.org/ or directly in PhpStorm -> Settings -> Languages & Frameworks -> PHP -> Composer and download composer.phar in your project directory or maybe in c:\php.
+2. Run "composer global require squizlabs/php_codesniffer" in cmd or add the following if you want it at project level.
+```
+"require-dev": {
+  "squizlabs/php_codesniffer": "3.*"
+}
+```
+3. Go to Settings -> Languages & Frameworks -> PHP -> Code Sniffer and click on the three dots button to add a new configuration.
+4. In the path look for your global or local composer path and check \vendor\bin\phpcs.bat (use the .bat in windows). The validate button should return a green message.
+5. Go to Settings -> Editor -> Inspections -> PHP and you'll see PHP Code Sniffer validator and PHP Mess Detector validation, check both (I usually also change the severity to Warning).
+6. (Optional) You can (should) select PSR-2 as Coding standard in php-cs. If is not in the list, click on refresh button.
