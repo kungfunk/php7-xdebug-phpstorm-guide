@@ -12,7 +12,6 @@ Really short guide to setup php7's built in server + xdebug to work with PhpStor
 ```
 [Xdebug]
 zend_extension=c:\php\ext\php_xdebug-(whatever version it is).dll
-xdebug.remote_autostart=1
 xdebug.remote_enable=1
 xdebug.remote_port="9000"
 xdebug.remote_host="localhost"
@@ -25,7 +24,8 @@ xdebug.idekey=PHPSTORM
 10. Create a new project with simple index.php with a few lines to test
 11. In the topbar, click on Edit configurations and add a new PHP Built-in Web Server. You can use localhost as host and the `/public` folder as Document Root.
 12. In the same topbar, click on the telephone icon to start listening xdebug stuff and run your newly created server.
-13. Add a breakpoint somewhere in your index.php and try to access localhost in your browser.
+13. Install Chrome/Firefox/Whatever Xdebug helper and enable it.
+13. Add a breakpoint somewhere in your index.php and try to access localhost in your browser with Xdebug helper enabled.
 14. Voila!
 
 ## (Optional) PHP Code Sniffer configuration ##
