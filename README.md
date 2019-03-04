@@ -49,7 +49,7 @@ This php configuration works great with sqlite databases, but for some projects 
 1. Download the latest mysql zip version (`mysql-8.0.12-winx64.zip`) from here https://dev.mysql.com/downloads/mysql/.
 2. Unzip it in `c:\mysql` or whatever.
 3. Create `c:\mysql\data` folder and run `mysqld --initialize-insecure`.
-4. After data files creation, run `mysql -uroot` and then `SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');` to change your root password to whatever you want.
+4. After data files creation, run `mysql -uroot` and then `ALTER USER 'root'@'localhost' IDENTIFIED BY 'your-password';` to change your root password to whatever you want.
 5. Create a file in `c:\mysql\bin\mysqldstart.bat` with this content:
 ```
 @ECHO OFF
